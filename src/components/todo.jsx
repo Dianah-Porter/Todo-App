@@ -1,4 +1,7 @@
+import TodoItem from "./TodoItem"
+
 function Todo() {
+    let paragraphs = ['IAmHere', 'reactjsexample.com', 'A To do app developed using to consolidate your knowledge about React']
   return (
     <div className="flex justify-center flex-col items-center gap-6 mt-20">
 
@@ -18,53 +21,15 @@ function Todo() {
         </button>
 
       </div>
+    <div className="w-125 bg-white shadow-md rounded-lg p-4">
+        {paragraphs.map((par, index) => (
+          <TodoItem key={index} text={par}/>
+        ))}
 
     
-      <div className="w-125 bg-white text-gray-700 shadow-md rounded-lg p-4">
+    </div>
 
-        {/* Todo Item 1 */}
-        <div className="flex items-center justify-between py-2 border-b border-gray-300">
-
-          <div className="flex items-center gap-3">
-            <input type="checkbox" />
-            <p>IAmHere</p>
-          </div>
-
-          <button className="text-red-500 text-lg">
-            <div className="bg-gray-300 w-12 h-12 rounded-full"><i class="fa-solid fa-trash p-3"></i></div>
-          </button>
-
-        </div>
-
-        <div className="flex items-center justify-between py-2 border-b border-gray-300">
-
-          <div className="flex items-center gap-3">
-            <input type="checkbox" />
-            <p>reactjsexample.com</p>
-          </div>
-
-          <button className="text-red-500 text-lg" >
-            <div className="bg-gray-300 w-12 h-12 rounded-full"><i class="fa-solid fa-trash p-3"></i></div>
-            
-          </button>
-
-        </div>
-
-      
-        <div className="flex items-center justify-between py-2">
-
-          <div className="flex items-center gap-3">
-            <input type="checkbox" />
-            <p>A To do app developed using to consolidate your knowledge about React</p>
-          </div>
-
-          <button className="text-red-500 text-lg">
-            <div className="bg-gray-300 w-12 h-12 rounded-full"><i class="fa-solid fa-trash p-3"></i></div>
-          </button>
-
-        </div>
-
-      </div>
+    
 
     </div>
   )
