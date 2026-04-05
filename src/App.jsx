@@ -4,6 +4,7 @@ import Todo from './components/todo'
 import Counter from './components/counter'
 import Child from './components/Child'
 import FocusRef from './components/Useref'
+import StateReduce from './components/UseReducer'
 
 export const ThemeContext = createContext("light");
 
@@ -12,20 +13,17 @@ function App() {
     console.log("Components loaded!")
   },[]);
 
-  const inputRef = useRef(); //creates ref object 
   
-  const focusInput = ()=> {
-    inputRef.current.focus();
-  };
 
   return (
-
-    <ThemeContext.Provider value='dark'>
+    <ThemeContext.Provider value='dark' >
       <Child/>
       <Todo/>
       <Counter />
       <FocusRef/>
+      <StateReduce/>
     </ThemeContext.Provider>
+
   )
 }
 

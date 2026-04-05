@@ -4,7 +4,7 @@ export default function Counter(){
     const [count, setCount] = useState(0);
     return (
         
-        <div className="mx-78 p-32 ">
+        <div className="mx-43 p-12 ">
 
             <h1 className="text-2xl pb-9">Simple Counter</h1>
             <div className="flex gap-6">
