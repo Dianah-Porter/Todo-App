@@ -6,6 +6,7 @@ import Child from './components/Child'
 import FocusRef from './components/Useref'
 import StateReduce from './components/UseReducer'
 import MemoHook from './components/UseMemo'
+import Callback from './components/UseCallback'
 
 export const ThemeContext = createContext("light");
 
@@ -18,12 +19,13 @@ function App() {
 
   return (
     <ThemeContext.Provider value='dark' >
-      <Child/>
+      {/* <Child/> */}
       <Todo/>
       <Counter />
       <FocusRef/>
       <StateReduce/>
       <MemoHook number={5}/>
+      <Callback/>
     </ThemeContext.Provider>
 
   )
