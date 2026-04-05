@@ -5,6 +5,7 @@ import Counter from './components/counter'
 import Child from './components/Child'
 import FocusRef from './components/Useref'
 import StateReduce from './components/UseReducer'
+import MemoHook from './components/UseMemo'
 
 export const ThemeContext = createContext("light");
 
@@ -22,6 +23,7 @@ function App() {
       <Counter />
       <FocusRef/>
       <StateReduce/>
+      <MemoHook number={5}/>
     </ThemeContext.Provider>
 
   )
