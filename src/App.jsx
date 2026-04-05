@@ -1,17 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React, {useEffect, useContext } from 'react'
+
 import './App.css'
 import Todo from './components/todo'
+import Counter from './components/counter'
+
+const ThemeContext = React.createContext("light");
 
 function App() {
-  const [count, setCount] = useState(0)
+  useEffect(()=> {
+    console.log("Components loaded!")
+  },[]);
 
   return (
     <>
       <Todo/>
+      <Counter/>
+      <h1>Hello </h1>
     </>
   )
 }
 
-export default App
+export default App;

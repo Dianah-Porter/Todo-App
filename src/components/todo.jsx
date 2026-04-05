@@ -1,15 +1,13 @@
 //import TodoItem from "./TodoItem"
-import { useState } from "react"
+/* import { useState } from "react"
 function Todo() {
   const [input,setInput] = useState("")
   const [items,setItems] = useState([])
   const [isChecked,setIsChecked] = useState(false)
 
   const handleSubmit = (e) =>{
-    e.preventDefault()
-    setItems([...items,
-    {text:input,checked:isChecked}
-      ])
+    e.preventDefault();
+    setItems([...items, {text:input,checked:isChecked}])
     setInput("")
      console.log(items)
   }
@@ -69,4 +67,57 @@ function Todo() {
   )
 }
 
-export default Todo
+export default Todo */
+
+import { useState } from "react"
+
+export default function Todo(){
+  const [input, setInput] = useState("");
+  const [items, setItems] = useState([]);
+  const [isChecked, SetIsChecked] = useState(false);
+
+  const handleSubmit = ()=> {
+    e.preventDefault();
+    setItems([...items, {text:input, checked:isChecked}])
+    setInput("")
+  }
+
+  const handleChange = ()=> {
+    
+
+  }
+  
+
+  return (
+        <form onSubmit={handleSubmit} className="flex justify-center flex-col mx-56 gap-8 ">
+      
+        <h1 className="text-2xl">Todos</h1>
+        <input
+         type="text" 
+         placeholder="Add todo ..."
+         className="w-78 border border-blue-400"
+         value={input}
+         onChange={e=> setInput(e.target.value)}
+         
+        />
+       <button className="absolute top-16 left-126 bg-green-600 w-6 h-6 rounded-2xl text-white"
+       onClick={handleSubmit}
+       >+</button>
+      
+
+      <div className="border border-gray-500 w-78">
+        {
+          items.map((item,index)=>{
+            return (
+              <div>
+                <input type="text" key={index} checked={item.checked}  />
+                <p>{item.text}</p>
+              </div>
+            )
+          })
+        }
+      </div>
+
+    </form>
+  )
+}
