@@ -5,6 +5,7 @@ export default function Counter(){
     return (
         
         <div className="mx-78 p-32 ">
+
             <h1 className="text-2xl pb-9">Simple Counter</h1>
             <div className="flex gap-6">
                 <button className="text-2xl w-12 h-9 bg-blue-600 text-white rounded-sm"

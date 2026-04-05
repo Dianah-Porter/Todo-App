@@ -1,23 +1,34 @@
-import React, {useEffect, useContext } from 'react'
-
+import {useEffect, createContext, useRef } from 'react'
 import './App.css'
 import Todo from './components/todo'
 import Counter from './components/counter'
+import Child from './components/Child'
+import FocusRef from './components/Useref'
 
-const ThemeContext = React.createContext("light");
+export const ThemeContext = createContext("light");
 
 function App() {
   useEffect(()=> {
     console.log("Components loaded!")
   },[]);
 
+  const inputRef = useRef(); //creates ref object 
+  
+  const focusInput = ()=> {
+    inputRef.current.focus();
+  };
+
   return (
-    <>
+
+    <ThemeContext.Provider value='dark'>
+      <Child/>
       <Todo/>
-      <Counter/>
-      <h1>Hello </h1>
-    </>
+      <Counter />
+      <FocusRef/>
+    </ThemeContext.Provider>
   )
 }
 
 export default App;
+
+
