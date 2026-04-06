@@ -76,15 +76,21 @@ export default function Todo(){
   const [items, setItems] = useState([]);
   const [isChecked, SetIsChecked] = useState(false);
 
-  const handleSubmit = ()=> {
+  const handleSubmit = (e)=> {
     e.preventDefault();
+    if(!input.trim()) return;
     setItems([...items, {text:input, checked:isChecked}])
     setInput("")
   }
 
-  const handleChange = ()=> {
-    
+  const handleChange = (index)=> {
+    newItems = [...items];
+    newItems[index].checked = !newItems[index].checked
+    setItems(newItems);
+  }
 
+  const deleteItem = (index)=>{
+   setItems(items.filter((item, i) => index !== i));
   }
   
 
@@ -97,21 +103,22 @@ export default function Todo(){
          placeholder="Add todo ..."
          className="w-78 border border-blue-400"
          value={input}
-         onChange={e=> setInput(e.target.value)}
-         
+         onChange={e=> setInput(e.target.value)} 
         />
+
        <button className="absolute top-16 left-126 bg-green-600 w-6 h-6 rounded-2xl text-white"
-       onClick={handleSubmit}
+       type="submit"
        >+</button>
       
 
-      <div className="border border-gray-500 w-78">
+      <div className="shadow shadow-blue-600 w-78">
         {
           items.map((item,index)=>{
             return (
-              <div>
-                <input type="text" key={index} checked={item.checked}  />
+              <div key={index} className={item.checked ? "line-through" : "flex gap-2 p-1"}>
+                <input type="checkbox" onChange={() => handleChange(index)}/>
                 <p>{item.text}</p>
+                <button className=" text-red-700 ml-15" onClick={()=> deleteItem(index)}>X</button>
               </div>
             )
           })

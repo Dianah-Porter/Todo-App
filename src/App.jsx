@@ -1,6 +1,6 @@
 import {useEffect, createContext, useRef } from 'react'
 import './App.css'
-import Todo from './components/todo'
+import Todo from './components/Todo'
 import Counter from './components/counter'
 import Child from './components/Child'
 import FocusRef from './components/Useref'
