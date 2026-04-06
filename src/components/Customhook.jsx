@@ -1,3 +1,18 @@
-function Employees(){
+import { useEffect } from "react";
+import UseEffect from "./UseFetch";
+
+export default function Employees(){
+    const {data, error, loading} = UseEffect("https://dummy.restapiexample.com/api/v1/employees");
+    if (loading) return <p>Loading.....</p>;
+    if (error) return <p>Error.....{error.message}</p>; 
     
+    return (
+    <div className='App'>
+      <h1>Hello React.</h1>
+      <h2>Start editing to see some magic happen!</h2>
+      {data && data.map((ele) => (
+        <p key={ele.id}>{ele.employee_name}</p>
+      ))}
+    </div>
+  );
 }

@@ -8,6 +8,7 @@ import StateReduce from './components/UseReducer'
 import MemoHook from './components/UseMemo'
 import Callback from './components/UseCallback'
 import Counters from './components/counter'
+import Employees from './components/Customhook'
 
 export const ThemeContext = createContext("light");
 
@@ -28,6 +29,7 @@ function App() {
       <MemoHook number={5}/>
       <Callback/>
       <Counter/>
+      <Employees/>
     </ThemeContext.Provider>
 
   )
