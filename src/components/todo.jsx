@@ -106,7 +106,7 @@ export default function Todo(){
          onChange={e=> setInput(e.target.value)} 
         />
 
-       <button className="absolute top-16 left-126 bg-green-600 w-6 h-6 rounded-2xl text-white"
+       <button className="absolute top-41 left-126 bg-green-600 w-6 h-6 rounded-2xl text-white"
        type="submit"
        >+</button>
       
