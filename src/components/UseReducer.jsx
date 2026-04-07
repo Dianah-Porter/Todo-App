@@ -29,7 +29,7 @@ const reduced = (state, action) => {
 export default function Counters(){
     const [count, dispatch] = useReducer(reduced, 0);
     return (
-        <div>
+        <div className="mx-43"> 
             <button className="bg-yellow-500 text-pink-700" onClick={() => dispatch('increment')}>increment</button>
             <p>{count}</p>
             <button className="bg-orange-500 text-pink-700" onClick={() => dispatch('decrement')}>Decrement</button>
