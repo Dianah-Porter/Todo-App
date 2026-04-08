@@ -12,6 +12,8 @@ import Employees from './components/Customhook'
 import ToggleButtons from './components/Togglebtn'
 import NameTransfer from './components/NameTransfer'
 import {Routes, Route, Link } from 'react-router-dom'
+import CardList from './components/ToggleCards'
+import Password from './components/Password'
 
 export const ThemeContext = createContext("light");
 
@@ -24,6 +26,8 @@ function Navbar(){
     {/* <Link to='/counters'>Counters</Link> */}
     <Link to='/counter'>Counter</Link>
     <Link to='/list'>List</Link>
+    <Link to='/cards'> Cards</Link>
+    <Link to='/password'> Password</Link>
   </nav>
   )
 }
@@ -43,6 +47,8 @@ function App() {
           <Route path='/counters' element={<Counters />}/>
           <Route path='/counter' element={<Counter />}/>
           <Route path='/List' element={<NameTransfer/>}/>
+          <Route path='/cards' element={<CardList/>}/>
+          <Route path='/password' element={<Password/>}/>
      </Routes>
       
       {/* <FocusRef/>
@@ -51,6 +57,7 @@ function App() {
       <Callback/> */}
     
       {/* <Employees/> */}  
+      
       
     </ThemeContext.Provider>
 
