@@ -1,13 +1,20 @@
+import { useState } from "react";
+
 export default function Password(){
+    const [password, setPassword] = useState("")
+    const [showPassword, setShowPassword] = useState(false);
+    const [isChecked, setIsChecked] = useState(false);
+
     return (
-        <form onSubmit={()=>handleSubmit} className="flex flex-col gap-4 mx-43">
+        <form className="flex flex-col gap-4 mx-43">
             <h1 className="text-2xl">Create Password</h1>
             <h2 className="text-gray-500">Enter a secure Password</h2>
-            <div>
-                <input type="password"  
+            <div className="">
+                <input type={showPassword ? "text":"password"}  
                 placeholder="Enter your password"
                 className="border-2 border-gray-400 w-67 rounded-xl focus:border focus:border-blue-400"
                 />
+                <button className="bg-blue-800 text-white w-12 rounded-2xl ">{showPassword ? "Hide": "Show"}</button>
             </div>
             <h2 className="font-bold">Password Requirements</h2>
             <div className="flex flex-col text-gray-500">
