@@ -14,6 +14,7 @@ import NameTransfer from './components/NameTransfer'
 import {Routes, Route, Link } from 'react-router-dom'
 import CardList from './components/ToggleCards'
 import Password from './components/Password'
+import Search from './components/Search'
 
 export const ThemeContext = createContext("light");
 
@@ -28,6 +29,7 @@ function Navbar(){
     <Link to='/list'>List</Link>
     <Link to='/cards'> Cards</Link>
     <Link to='/password'> Password</Link>
+    <Link to="/search">Search</Link>
   </nav>
   )
 }
@@ -49,6 +51,7 @@ function App() {
           <Route path='/List' element={<NameTransfer/>}/>
           <Route path='/cards' element={<CardList/>}/>
           <Route path='/password' element={<Password/>}/>
+          <Route path='/search' element={<Search/>}/>
      </Routes>
       
       {/* <FocusRef/>
