@@ -72,7 +72,9 @@ export default function Password(){
                 <label><input type="checkbox" checked={hasDigit(password)} readOnly/> Contains a digit</label>
                 <label><input type="checkbox" checked={hasSpecial(password)} readOnly/> Contains a special character</label>
             </div>
-            <button className="bg-gray-600 text-white w-32 h-12" type="submit">Submit</button>
+            <button disabled={!isValid}
+            className={` text-white w-32 h-12 ${isValid ? "bg-blue-600" : "bg-gray-600"}` }
+             type="submit">Submit</button>
         </form>
     )
 }
