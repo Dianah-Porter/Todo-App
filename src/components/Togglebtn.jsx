@@ -2,10 +2,15 @@ import { useState } from "react";
 
 export default function ToggleButtons(){
     const buttons = ['Button 1', 'Button 2', 'Button 3', 'Button 4' ];
-    const [activeIndex, setActiveIndex ] = useState(null);
+    const [activeButtons, setActiveButtons ] = useState([]);
 
-    const changeColor = (index)=> {
-        setActiveIndex(index);
+    const ToggleButtons = (index)=> {
+        if(activeButtons.includes(index)) {
+            setActiveButtons(activeButtons.filter(i => i !== index));
+        }
+        else {
+            setActiveButtons([...activeButtons, index])
+        }
     }
 
     return (
@@ -13,8 +18,10 @@ export default function ToggleButtons(){
             { buttons.map((button, index) => {
                return (
                  <button key={index} 
-                 className={activeIndex === index ? "w-18 h-12 bg-gray-500 text-white rounded-2xl":"w-18 h-12 bg-pink-500 text-white rounded-2xl"}
-                 onClick={() => changeColor(index)}
+                 className={`w-18 h-12 text-white ${
+            activeButtons.includes(index) ? "bg-gray-500" : "bg-blue-700"
+          }`}
+                 onClick={() => ToggleButtons(index)}
                  >{button}</button>
                 )
             })
